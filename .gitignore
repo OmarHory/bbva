@@ -1,0 +1,17 @@
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+*.pywz
+*.pyzw
+__pycache__
+# pycache files across all subdirectories
+**/__pycache__
+
+app/workflow/build_workflow.ipynb
+.DS_Store
+.env
+
+app/workflow/graph_copy.py
+app/workflow/nodes_copy.py
