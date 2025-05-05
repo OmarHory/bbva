@@ -20,6 +20,7 @@ def chat_endpoint(message: ChatMessage, authenticated: bool = Depends(verify_tok
         state = compiled_graph.invoke({"user_query": message.text}, thread)
         if state.get("end_of_conversation", False):
             logger.info(f"Conversation ended for {message.user_id}")
+            reset_user_state(message.user_id)
             return ChatResponse(
                 user_id=message.user_id,
                 message=state["final_message"],
